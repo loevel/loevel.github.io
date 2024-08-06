@@ -6,6 +6,8 @@
     <title>Portfolio - Développeur Full-Stack</title>
     <!-- Bootstrap CDN -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Animate.css CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -13,6 +15,7 @@
         .hero {
             background-color: #f8f9fa;
             padding: 50px 0;
+            animation: fadeInDown 1s;
         }
         .hero h1 {
             font-size: 3rem;
@@ -25,20 +28,70 @@
         .section-title {
             font-size: 2rem;
             margin-bottom: 20px;
+            animation: fadeInUp 1s;
         }
         .skills .badge {
             font-size: 1rem;
             padding: 10px;
             margin: 5px;
+            transition: transform 0.3s;
+        }
+        .skills .badge:hover {
+            transform: scale(1.1);
         }
         .experience-item {
             margin-bottom: 20px;
+            animation: fadeInLeft 1s;
         }
         .experience-item h4 {
             margin-bottom: 5px;
         }
         .experience-item p {
             margin-bottom: 0;
+        }
+        .form-group input, .form-group textarea {
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .form-group input:focus, .form-group textarea:focus {
+            background-color: #e9ecef;
+            transform: scale(1.05);
+        }
+        .btn-primary {
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+            transform: scale(1.1);
+        }
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
     </style>
 </head>
@@ -71,32 +124,32 @@
 <!-- Hero Section -->
 <section class="hero text-center">
     <div class="container">
-        <h1>Bonjour, je suis Développeur Full-Stack</h1>
-        <p>Spécialisé en JavaScript, React, Angular, et Spring Boot</p>
+        <h1 class="animate__animated animate__fadeInDown">Bonjour, je suis Développeur Full-Stack</h1>
+        <p class="animate__animated animate__fadeInUp">Spécialisé en JavaScript, React, Angular, et Spring Boot</p>
     </div>
 </section>
 
 <!-- About Section -->
 <section id="about" class="py-5">
     <div class="container">
-        <h2 class="section-title">À propos de moi</h2>
-        <p>Je suis un développeur full-stack passionné avec plus de 5 ans d'expérience dans le développement web. J'ai une expertise approfondie en JavaScript, React, Angular, et Spring Boot. J'aime créer des applications web efficaces, sécurisées et intuitives.</p>
+        <h2 class="section-title animate__animated animate__fadeInUp">À propos de moi</h2>
+        <p class="animate__animated animate__fadeInUp">Je suis un développeur full-stack passionné avec plus de 5 ans d'expérience dans le développement web. J'ai une expertise approfondie en JavaScript, React, Angular, et Spring Boot. J'aime créer des applications web efficaces, sécurisées et intuitives.</p>
     </div>
 </section>
 
 <!-- Skills Section -->
 <section id="skills" class="py-5 bg-light">
     <div class="container">
-        <h2 class="section-title">Compétences</h2>
+        <h2 class="section-title animate__animated animate__fadeInUp">Compétences</h2>
         <div class="skills">
-            <span class="badge badge-primary">JavaScript</span>
-            <span class="badge badge-secondary">React</span>
-            <span class="badge badge-success">Angular</span>
-            <span class="badge badge-danger">Spring Boot</span>
-            <span class="badge badge-warning">HTML/CSS</span>
-            <span class="badge badge-info">Bootstrap</span>
-            <span class="badge badge-light">Node.js</span>
-            <span class="badge badge-dark">MongoDB</span>
+            <span class="badge badge-primary animate__animated animate__fadeInLeft">JavaScript</span>
+            <span class="badge badge-secondary animate__animated animate__fadeInLeft">React</span>
+            <span class="badge badge-success animate__animated animate__fadeInLeft">Angular</span>
+            <span class="badge badge-danger animate__animated animate__fadeInLeft">Spring Boot</span>
+            <span class="badge badge-warning animate__animated animate__fadeInLeft">HTML/CSS</span>
+            <span class="badge badge-info animate__animated animate__fadeInLeft">Bootstrap</span>
+            <span class="badge badge-light animate__animated animate__fadeInLeft">Node.js</span>
+            <span class="badge badge-dark animate__animated animate__fadeInLeft">MongoDB</span>
         </div>
     </div>
 </section>
@@ -104,18 +157,18 @@
 <!-- Experience Section -->
 <section id="experience" class="py-5">
     <div class="container">
-        <h2 class="section-title">Expériences</h2>
-        <div class="experience-item">
+        <h2 class="section-title animate__animated animate__fadeInUp">Expériences</h2>
+        <div class="experience-item animate__animated animate__fadeInLeft">
             <h4>Projet 1 : Plateforme de Gestion des Tâches</h4>
             <p><strong>Technologies :</strong> JavaScript, React, Node.js, MongoDB</p>
             <p>Développement d'une plateforme complète de gestion des tâches avec authentification utilisateur, gestion des projets et collaboration en temps réel.</p>
         </div>
-        <div class="experience-item">
+        <div class="experience-item animate__animated animate__fadeInLeft">
             <h4>Projet 2 : Application de Suivi des Commandes</h4>
             <p><strong>Technologies :</strong> Angular, Spring Boot, MySQL</p>
             <p>Création d'une application de suivi des commandes pour une entreprise de commerce électronique, incluant la gestion des stocks et l'intégration de paiements en ligne.</p>
         </div>
-        <div class="experience-item">
+        <div class="experience-item animate__animated animate__fadeInLeft">
             <h4>Projet 3 : Site Web de Portfolio Dynamique</h4>
             <p><strong>Technologies :</strong> JavaScript, React, Bootstrap</p>
             <p>Développement d'un site web de portfolio dynamique permettant aux utilisateurs de mettre à jour facilement leur contenu et de montrer leurs travaux en ligne.</p>
@@ -126,21 +179,21 @@
 <!-- Contact Section -->
 <section id="contact" class="py-5 bg-light">
     <div class="container">
-        <h2 class="section-title">Contact</h2>
+        <h2 class="section-title animate__animated animate__fadeInUp">Contact</h2>
         <form>
             <div class="form-group">
                 <label for="name">Nom</label>
-                <input type="text" class="form-control" id="name" placeholder="Votre nom">
+                <input type="text" class="form-control animate__animated animate__fadeInUp" id="name" placeholder="Votre nom">
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" class="form-control" id="email" placeholder="Votre email">
+                <input type="email" class="form-control animate__animated animate__fadeInUp" id="email" placeholder="Votre email">
             </div>
             <div class="form-group">
                 <label for="message">Message</label>
-                <textarea class="form-control" id="message" rows="3" placeholder="Votre message"></textarea>
+                <textarea class="form-control animate__animated animate__fadeInUp" id="message" rows="3" placeholder="Votre message"></textarea>
             </div>
-            <button type="submit" class="btn btn-primary">Envoyer</button>
+            <button type="submit" class="btn btn-primary animate__animated animate__fadeInUp">Envoyer</button>
         </form>
     </div>
 </section>
